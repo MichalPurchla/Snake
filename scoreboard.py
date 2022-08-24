@@ -1,6 +1,8 @@
 from turtle import Turtle
-ALIGMENT = 'center'
+ALIGNMENT = 'center'
 FONT = ('Arial', 12)
+
+
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
@@ -8,7 +10,7 @@ class Scoreboard(Turtle):
         self.color('white')
         self.penup()
         self.hideturtle()
-        self.goto(x=0, y = 280)
+        self.goto(x=0, y=280)
         self.highest_result = 0
         self.read_highest_score()
         self.display_score()
@@ -25,7 +27,8 @@ class Scoreboard(Turtle):
 
     def display_score(self):
         self.clear()
-        self.write(f'Score: {self.score}      Highest score: {self.highest_result}', move=False, align=ALIGMENT, font=FONT)
+        self.write(f'Score: {self.score}      Highest score: {self.highest_result}', move=False, align=ALIGNMENT,
+                   font=FONT)
 
     def game_over(self):
         # self.goto(0,0)
@@ -47,4 +50,3 @@ class Scoreboard(Turtle):
     def save_highest_score(self):
         with open('highest_score.txt', 'w') as writer:
             writer.write(str(self.score))
-
