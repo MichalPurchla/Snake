@@ -7,10 +7,10 @@ class Food(Turtle):
         super().__init__()
         self.shape('circle')
         self.penup()
-        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+        self.shapesize(stretch_len=0.7, stretch_wid=0.5)
         self.color("blue")
         self.speed("fastest")
-        self.refresh()
+        # self.refresh()
 
     def refresh(self):
         self.goto(x=randint(-280, 280), y=randint(-280,280))
